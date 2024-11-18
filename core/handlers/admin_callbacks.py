@@ -15,4 +15,4 @@ servers = ServerController()
 @router.callback_query(F.data == "delete_server")
 async def delete_server(callback: CallbackQuery):
     await servers._init_server_controller()
-    await callback.answer('Скоро...')
+    await callback.answer('Скоро....')
