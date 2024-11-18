@@ -21,7 +21,6 @@ pydantic==2.9.2
 pydantic_core==2.23.4
 python-a2s==1.4.1
 python-dotenv==1.0.1
-python-valve==0.2.1
 requests==2.32.3
 six==1.16.0
 tqdm==4.67.0
