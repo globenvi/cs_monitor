@@ -1,3 +1,4 @@
+a2s==1.0.1
 aiofiles==24.1.0
 aiogram==3.15.0
 aiohappyeyeballs==2.4.3
