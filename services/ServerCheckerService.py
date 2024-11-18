@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 server_controller = ServerController()
 
 class ServerCheckerService:
-    def __init__(self, interval: int = 180):
+    def __init__(self, interval: int = 30):
         self.interval = interval
 
     async def _init_server_controller(self):
