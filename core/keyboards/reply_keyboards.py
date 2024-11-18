@@ -10,12 +10,6 @@ main_keyboard = ReplyKeyboardMarkup(
         [
             KeyboardButton(text="🌐 Сервера"),
             # KeyboardButton(text='💊 Тех.Поддержка')
-        ],
-        [
-            KeyboardButton(text="🌐 Скины"),
-            KeyboardButton(text="🌐 Скин паки"),
-            KeyboardButton(text="🌐 Конфиги"),
-            KeyboardButton(text="🌐 Карты")
         ]
     ],
     resize_keyboard=True,
