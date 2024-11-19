@@ -12,7 +12,7 @@ router = Router()
 user = UserController()
 servers = ServerController()
 
-@router.callback_query(F.data == "delete_server")
+@router.callback_query(F.data.startswith('delete_server'))
 async def delete_server(callback: CallbackQuery):
     await servers._init_server_controller()
-    await callback.answer('Скоро....')
+    print(callback.data)

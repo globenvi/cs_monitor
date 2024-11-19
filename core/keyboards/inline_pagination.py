@@ -9,7 +9,7 @@ class Pagination(CallbackData, prefix="pag"):
     action: str
     page: int
 
-def paginator(page: int = 0, count: int = 0, admin: str = None) -> InlineKeyboardMarkup:
+def paginator(page: int = 0, count: int = 0, admin: str = None, ip: str = None) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     builder.row(
         InlineKeyboardButton(text="⬅️", callback_data=Pagination(action="prev", page=page).pack()),
@@ -20,12 +20,12 @@ def paginator(page: int = 0, count: int = 0, admin: str = None) -> InlineKeyboar
     
     if admin == "admin":
         builder.row(
-            InlineKeyboardButton(text="Удалить сервер", callback_data="delete_server"),
+            InlineKeyboardButton(text="Удалить сервер", callback_data=f"delete_server_{ip}"),
             width=1
         )
 
     builder.row(
-        InlineKeyboardButton(text="Добавить в избранное", callback_data="save_server_to_favorite"),
+        InlineKeyboardButton(text="Добавить в избранное", callback_data=f"save_server_to_favorite_{ip}"),
         width=1
     )
     return builder.as_markup()
