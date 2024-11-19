@@ -61,7 +61,7 @@ async def pagination_handler(call: CallbackQuery, callback_data: Pagination):
     with suppress(TelegramBadRequest):
         await call.message.edit_media(
             media=InputMediaPhoto(media=photo, caption=server_info),
-            reply_markup=paginator(page, len(servers), ip = await server_controller.get_server(servers[page][1]))
+            reply_markup=paginator(page, len(servers))
         )
 
         await call.message.edit_caption(
@@ -107,7 +107,7 @@ async def get_servers(message: Message):
     await message.answer_photo(
         photo=photo,
         caption=server_info,
-        reply_markup=paginator(0, len(servers), await user.get_role(message.from_user.id), ip = await server_controller.get_server(servers[0][1])),
+        reply_markup=paginator(0, len(servers), await user.get_role(message.from_user.id)),
         parse_mode='html'
     )
 
